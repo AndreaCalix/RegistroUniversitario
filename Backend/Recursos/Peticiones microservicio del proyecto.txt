@@ -1,0 +1,60 @@
+**Crear facultad **
+
+http://localhost:8080/facultad/crearFacultad?Id=59&nombre=Facultad%20de%20Ingenieria&numCarreras=52
+
+http://localhost:8080/facultad/crearFacultad?id=3&nombre=Facultad%20de%20Ciencias%20Medicas&numCarreras=7
+http://localhost:8080/facultad/listaFacultad
+http://localhost:8080/facultad/buscarFacultad?id=1
+http://localhost:8080/facultad/buscarFacultad?id=2
+http://localhost:8080/facultad/buscarFacultad?id=3
+
+
+**crear carrera**
+
+http://localhost:8080/carrera/crearCarrera?id=1&nombre=Ingenieria en%20Sistemas&descripcion=carrera%20de%20ingenieria%20en%20sistemas%20orientada%20a%20la%20programacion&numAsignaturas=56&grado=pregrado&duracionCarrera=5%20anios&facultad=1
+http://localhost:8080/carrera/listaCarrera
+http://localhost:8080/carrera/buscarCarrera?id=1
+
+**Crear maestria**
+
+http://localhost:8080/maestria/crearMaestria?id=1&nombre=Maestria en gestion empresarial&orientacion=Economia&grado=postgrado&duracion=2 anios&cantidadClases=25&descripcion=maestria orientada a la economia de una empresa&facultad=1
+http://localhost:8080/maestria/listaMaestria
+http://localhost:8080/maestria/buscarMaestria?id=1
+
+**Crear Estudiante**
+
+http://localhost:8080/estudiante/crearEstudiante?dni=0803199313756&nombre=Cristian Joel Avila Flores&fechanacimiento=2000-04-20&sexo=M&telefono=98697452&ciudadOrigen=La Ceiba, Atlantida&correoElectronico=cristian@gmail.com&contrasenia=12345&carrera=1
+http://localhost:8080/estudiante/listaEstudiante
+http://localhost:8080/estudiante/buscarEstudiante?id=6573139913080
+
+**Crear Matricula**
+
+http://localhost:8080/matricula/crearMatricula?id=01&Periodo=primero&Anio=2020&numCuentaEstudiante=6573139913080
+http://localhost:8080/matricula/listaMatricula
+http://localhost:8080/matricula/buscarMatricula?id=1
+
+**Crear Departamento**
+
+http://localhost:8080/departamento/creaDepartamento?id=1&nombreDepto=Departamento de ingenieria en sistemas&idCarrera=1
+http://localhost:8080/departamento/listaDepartamento
+http://localhost:8080/departamento/buscarDepartamento?id=1
+
+**Crear Clase**
+
+http://localhost:8080/clase/crearClase?id=Is-599&nombreClase=Sistemas operativos&descripcion=clase referente a sistemas operativos&idMatricula=1&departamento=1
+http://localhost:8080/clase/listaClase
+http://localhost:8080/clase/buscarClase?id=Is-599
+
+
+
+
+
+
+
+
+
+
+
+
+
+

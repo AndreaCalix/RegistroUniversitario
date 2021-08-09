@@ -1,0 +1,31 @@
+***Comandos para usar git***
+erickjavierrodriguezacosta@gmail.com
+Erick1314
+Erick-1999
+
+---> Comandos para agregar el repositorio a nuestra pc
+
+1. git init
+2. git remote add origin https://github.com/EnriqueDll/Registro-Universitario.git https://github.com/AlexGalo0/AutomataLP.git 
+3. git pull origin main
+git request-pull [-p] <start> <url>
+git request-pull v1.0 https://github.com/AlexGalo0/AutomataLP.git 
+---> Comandos para subir un modificaciones
+
+1. git add .
+//Este comando agrega todos los archivos que se hayan modificado y los que no
+
+2. git status 
+//este no es necesario siempre, solo para verificar si agregamos todo.
+//Los nombres de los archivos estaran en verde
+
+3. git commit -m "Mensaje que quieren que vaya en el respositorio cuando se hagan actualizaciones"
+//Entre las comillas se ingresa el mensaje que quieran 
+
+4. git push origin master
+//con este comando hacen push y ya deberia aparecer actualizado en el repositorio en linea
+
+**Recomendacion: Hacer siempre pull antes de iniciar a trabajar**
+
+    git push --set-upstream origin master
+git push -f  referencia_remota referencia_local  
