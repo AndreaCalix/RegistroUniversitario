@@ -65,7 +65,7 @@ import proyecto.unah.bd.service.ServiceSeccionLab;
 public class Controlador {
 	
 
-	
+		
 	@Autowired
 	ServiceCarrera servicecarrera;
 	
