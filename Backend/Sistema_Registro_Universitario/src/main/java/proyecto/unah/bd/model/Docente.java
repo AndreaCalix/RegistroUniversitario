@@ -21,12 +21,12 @@ public class Docente {
 	@Id
 	public String numCuentaDocente;
 	public String  dni;
-	public String nombre;
+	public String nombreDocente;
 	public LocalDate fechaNac;
 	public String sexo; //puede tirar error porque en la base, este atributo es de tipo char
 	private String telefono;
 	private String ciudadOrigen;
-	public String Correo_Electronico;
+	public String correoElectronico;
 	private String contrasenia;
 	
 	//Relacion con Departamento
@@ -39,17 +39,17 @@ public class Docente {
 	public Docente() {}
 
 	//Constructor 
-	public Docente(String numCuentaDocente, String dni, String nombre, LocalDate fechaNac, String sexo,
-			String telefono, String ciudadOrigen, String correo_Electronico, String contrasenia, Departamento departamento) {
+	public Docente(String numCuentaDocente, String dni, String nombreDocente, LocalDate fechaNac, String sexo,
+			String telefono, String ciudadOrigen, String correoelectronico, String contrasenia, Departamento departamento) {
 		super();
 		this.numCuentaDocente = numCuentaDocente;
 		this.dni = dni;
-		this.nombre = nombre;
+		this.nombreDocente = nombreDocente;
 		this.fechaNac = fechaNac;
 		this.sexo = sexo;
 		this.telefono = telefono;
 		this.ciudadOrigen = ciudadOrigen;
-		this.Correo_Electronico = correo_Electronico;
+		this.correoElectronico = correoelectronico;
 		this.contrasenia = contrasenia;
 		this.departamento = departamento;
 	}
@@ -73,12 +73,12 @@ public class Docente {
 		this.dni = dni;
 	}
 
-	public String getNombre() {
-		return nombre;
+	public String getNombreDocente() {
+		return nombreDocente;
 	}
 
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
+	public void setNombreDocente(String nombreDocente) {
+		this.nombreDocente = nombreDocente;
 	}
 
 	public LocalDate getFechaNac() {
@@ -113,12 +113,12 @@ public class Docente {
 		this.ciudadOrigen = ciudadOrigen;
 	}
 
-	public String getCorreo_Electronico() {
-		return Correo_Electronico;
+	public String getcorreoElectronico() {
+		return correoElectronico;
 	}
 
-	public void setCorreo_Electronico(String correo_Electronico) {
-		Correo_Electronico = correo_Electronico;
+	public void setcorreoElectronico(String correoelectronico) {
+		correoElectronico = correoelectronico;
 	}
 
 	public String getContrasenia() {

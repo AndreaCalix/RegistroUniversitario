@@ -60,7 +60,7 @@ import proyecto.unah.bd.service.ServiceSeccionLab;
  *@Controller
  */
 
-@RestController
+@Controller
 
 public class Controlador {
 	
@@ -115,8 +115,78 @@ public class Controlador {
 	ServiceSeccionLab serviceseccionlab;
 	
 	
-	//-------------------------------Pagina Inicial-------------------------------
-
+	//-------------------------------Paginas Iniciales-------------------------------
+	
+	@GetMapping("/")
+	public String paginaPrincipal() {
+		return "PaginaPrincipal";
+	}
+	
+	@GetMapping("/desarrolladores")
+	public String paginaDesarrolladores() {
+		return "equipo";
+	}
+	
+	@GetMapping("/maestrias")
+	public String paginaMaestrias() {
+		return "maestrias";
+	}
+	
+	@GetMapping("/facultades")
+	public String paginaFacultades() {
+		return "facultades";
+	}
+	
+	//-------------------------Estudiante-----------------------
+	@GetMapping("/estudiante/RegistrarEstudiante")
+	public String estudianteRegistro () {
+		return "EstudianteRegistro";
+	}
+	
+	@GetMapping("/estudiante/LoginEstudiante")
+	public String loginEstudiante () {
+		return "estudianteLogin";
+	}
+	
+	@GetMapping("/estudiante/infoEstudianteMatricula")
+	public String EstudianteMatricula () {
+		return "matriculaEstudiante";
+	}
+	
+	@GetMapping("/estudiante/infoEstudianteHistorial")
+	public String EstudianteHistorial () {
+		return "historialEstudiante";
+	}
+	
+	//--------------------------Docente-----------------------
+	@GetMapping("/docente/RegistrarDocente")
+	public String docenteRegistro() {
+		return "";
+	}
+	
+	@GetMapping("/docente/LoginDocente")
+	public String loginDocente () {
+		return "";
+	}
+	
+	@GetMapping("/docente/informacionDocente")
+	public String infoDocente () {
+		return "";
+	}
+	
+	
+	//--------------------------Admin--------------------------
+	
+	@GetMapping("/adminLogin")
+	public String adminLogin() {
+		return "";
+	}
+	
+	@GetMapping("/adminInfo")
+	public String adminInfo() {
+		return "";
+	}
+	
 	//====================================================================
 	// FACULTAD
 	//====================================================================
@@ -210,8 +280,9 @@ public class Controlador {
 					
 		//====================================================================
 		// Estudiante
-		//====================================================================
-		
+		//===================================================================
+				
+				
 				@RequestMapping (value = "/estudiante/crearEstudiante", method = RequestMethod.GET)
 				public Estudiante crearEstudiante(@RequestParam(name = "dni") String dni,
 												  @RequestParam(name = "nombre") String nombreEstudiante,
@@ -441,7 +512,7 @@ public class Controlador {
 				 					@RequestParam(name = "Sexo") String sexo,//cambiar a char
 				 					@RequestParam(name = "Telefono") String telefono,
 				 					@RequestParam(name = "Ciudad de Origen") String ciudadOrigen,
-				 					@RequestParam(name = "Correo Electronico") String Correo_Electronico,
+				 					@RequestParam(name = "CorreoElectronico") String Correo_Electronico,
 				                    @RequestParam(name = "Contraseña") String contrasenia,
 				                    @RequestParam(name = "Departamento") int departamento) {
 		//Buscar Departamento
