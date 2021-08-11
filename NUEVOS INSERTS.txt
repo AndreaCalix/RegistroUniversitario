@@ -1,0 +1,117 @@
+
+##DOCENTE
+# Docentes que pertenecen a ing sistemas 500
+INSERT INTO DOCENTE VALUES('5850087917325','1236597800585','Sulma Abigail Espinoza Torres','1998-05-23','F','33256663','Cedros','espinozatorres@','1998','500');
+INSERT INTO DOCENTE VALUES('8973217911080','4569797123467','Carlos Gerardo Banegas','1971-05-10','M','89366387','Olancho','banegas@','1973','500');
+INSERT INTO DOCENTE VALUES('9573456917081','1807198756897','Edith Matamoros Rosales','1967-01-11','F','97763212','Talanga','edith@rosales','edith','500');
+
+# Docentes que pertencen a ing civil 501
+INSERT INTO DOCENTE VALUES('3204012311080','0803198904021','Rolando Francisco Escoto','1960-06-10','M','98970423','Olancho','roli@','eltorpe69','501')  ; 
+INSERT INTO DOCENTE VALUES('4568766611080','0802199978244','Yamileth Xiomara Suarez','1983-10-05','F','88633212','Copan','Xiomi@','paz','501');
+INSERT INTO DOCENTE VALUES('7652359917081','1803199214523','Iveth Vaca Toro','1992-08-05','F','22602356','Roatan','iveth@','ojitos12','501');
+
+#Docentes de ing mecanica
+INSERT INTO DOCENTE VALUES('4020098911080','0801192304023','Cristiano Rolando Aveiro','1998-06-10','M','92350436','La Mosquitia','ronaldo7@','siuuuu','501')  ; 
+INSERT INTO DOCENTE VALUES('4568799912354','0801188878654','Dailin Zoe Ramirez Flores','1979-10-05','F','887457212','La Ceiba','alexandra@','laturquita','501');
+INSERT INTO DOCENTE VALUES('7654119817081','1807199714567','Maria Celeste Muñoz','1993-10-05','F','99784526','Lempira','celeste@','456','501');
+
+#Docentes de Matematica
+INSERT INTO DOCENTE VALUES('345013911080','0801199600543','Jose Carlos Espinoza','1960-08-21','M','El Porvenir','98152058','josecarlos@','elronco','503');
+INSERT INTO DOCENTE VALUES('5431239911147','0801197821345','Esser Misael Lopez','1976-09-23','M','Tegucigalpa','2224873','esser@','musica','503');
+INSERT INTO DOCENTE VALUES('8790238917896','18071993209781','Rosa Virjinia Velasquez','1960-12-25','F','Tegucigalpa','22262165','velasquez@','235','503');
+
+#Docentes de Fisica
+INSERT INTO DOCENTE VALUES('3452357911080','0801197800235','Saul Armando Sanchez','1978-08-21','M','San Pedro Sula','98745612','sanchez@','1243','503');
+INSERT INTO DOCENTE VALUES('5431239931080','0803199321345','Santiago Marcel Mejia','1993-09-23','M','Tegucigalpa','88745691','mejia@','brenda','503');
+INSERT INTO DOCENTE VALUES('8790245817081','1807189720978','Adalberto Hernandez Marquez','1976-12-25','M','Intibuca','2356891','marquez@','maira','503');
+
+#Docentes de Contaduria 
+INSERT INTO DOCENTE VALUES('8934456911080','0804199324398','Olvin Alfredo Valle','1993-08-07','M','99134521','Lempira','Olvin@','sulma8','506');
+INSERT INTO DOCENTE VALUES('4311119911080','0803199323134','Luis Danori Ordoñes','1993-05-20','M','22240876','Copan','luis@','junio23','506');
+INSERT INTO DOCENTE VALUES('9323222211080','0803199023239','Sara Veltran Quijano','1978-12-20','F','96542123','La paz','sar@','pluto21','506');
+
+#Docentes de admin empresas
+INSERT INTO DOCENTE VALUES('6584239911080','0801198524398','Delmer Perfec Ramires','1978-08-07','M','99124521','Tegucigalpa','perfecto@','23561','506');
+INSERT INTO DOCENTE VALUES('1233239911080','0801186923134','Yorsi Geronimo Vaquez','1989-06-20','F','22239876','Soroguara','yordi@','45787','506');
+INSERT INTO DOCENTE VALUES('3213209911080','0801198723239','Elida Rosa Martinez','1990-12-20','F','96542133','Tegucigalpa','elida@','23547','506');
+
+# Docentes de Derecho 
+INSERT INTO DOCENTE VALUES('5432020021080','0801200002345','Cristofer Velez Zamorano','2001-08-04','M','97789912','Camayagua','crsta@n','juenaes1473','510');
+INSERT INTO DOCENTE VALUES('9601077714090','0904199901147','Erick Briam Colon','1990-10-05','M','98999235','Ceiba','bri@n','brian9563','510');
+INSERT INTO DOCENTE VALUES('4540017914001','1004197107896','Richard Zadiel Camacho','1971-12-21','M','89765423','Tegucigalpa','camacho@','45876','510');
+
+# Docentes Medicina
+INSERT INTO DOCENTE VALUES('5432050521080','0801200102000','Maria Angelica Arizaga','2001-10-04','F','97642912','San Pedro Sula','ariz@','jotabenz','510');
+INSERT INTO DOCENTE VALUES('9601044414090','0904199901111','Melissa loza Quezada','1990-08-06','F','98999952',' La Ceiba','loz@','loza','510');
+INSERT INTO DOCENTE VALUES('4560013334001','1004197100222','Paloma Bernardina Fiuza','1995-11-21','F','89765423','Tegucigalpa','fuiz@','guayo','510');
+
+#Docentes Terapia
+INSERT INTO DOCENTE VALUES('5433040521080','0801200108525','Gino Assereto Benz','1998-10-04','M','97642913','Tegucigalpa','assereto@','lachina','510');
+INSERT INTO DOCENTE VALUES('9601022414090','0904199901741','Jose Luis Bentz','1990-08-06','M','97999952','Cortes','jota@','angi56','510');
+INSERT INTO DOCENTE VALUES('4560013335555','1004197100456','Yohana Marisol San Miguel','1993-11-21','F','85765423','Nacaome','yoha@','25684','510');
+
+# Docentes Microbiologia
+INSERT INTO DOCENTE VALUES('5432078921080','0803200102000','Geydi Sarai Bardales Mendoza','2001-10-04','F','97872912','San Pedro Sula','bardales@','jb45','510');
+INSERT INTO DOCENTE VALUES('2356044414090','0801199901111','Fernando Patricio Parodi','1990-08-06','M','98999956',' La Ceiba','parodi@','patoloco','510');
+INSERT INTO DOCENTE VALUES('4560019634001','0803197100222','Karen Paola Avila Arguijo','1995-11-21','F','89745423','Tegucigalpa','paol@','45879','510');
+
+##ESTUDIANTE
+#estudiantes de sistemas 203
+INSERT INTO ESTUDIANTE VALUES('9573112678080','0823599913759','Luciana Micaela Fuster','1997-05-25','F','33229093','Tegucigalpa','fuster@','232235','203');
+INSERT INTO ESTUDIANTE VALUES('9523540021080','0801244421759','Ducelia Echeverria Corrales','2000-10-09','F','98239093','Cedros','echeverria5@','echeverri07','203');
+INSERT INTO ESTUDIANTE VALUES('2000000027081','1805248730585','Jacobo Emerson Esquenasi Villaroro','2000-1206','M','98529888','Yoro','esquenassi6@','villatoro','203');
+
+##MATRICULA
+
+INSERT INTO MATRICULA VALUES(default,default,'2','2017','9573112678080');#132
+INSERT INTO MATRICULA VALUES(default,default,'3','2018','9523540021080');#133
+INSERT INTO MATRICULA VALUES(default,default,'1','2021','2000000027081');#134
+
+##CLASE
+
+INSERT INTO CLASE VALUES('IS-528','sistemas operativos II','Finalizacion de claselos Sistemas Operativos','132','500');
+INSERT INTO CLASE VALUES('IS-121','Electronica','Comprension de circuitos','132','500');
+
+INSERT INTO CLASE VALUES('IS-240','Instalaciones Electricas','Analisis de instalaciones electricas','133','500');
+INSERT INTO CLASE VALUES('IS-145','Matematica I', 'Introduccion al algebra','133','500') ;
+INSERT INTO CLASE VALUES('IS-146','Geometria y Trigonometria', 'Introduccion a gemotria plana','133','500') ;
+
+INSERT INTO CLASE VALUES('IS-241','Base de Datos I', 'Introduccion a bases de datos','134','500') ;
+INSERT INTO CLASE VALUES('IS-611','Redes de Datos', 'Conceptos Generales sobre Redes','134','500') ;
+INSERT INTO CLASE VALUES('IS-200','Programacion_Orientada_Objetos', 'Fundamentos de POO','134','500');
+
+##SECCION
+
+INSERT INTO SECCION VALUES(default,'IS-528','04','12:00','LMXJV','10');
+INSERT INTO SECCION VALUES(default,'IS-121','01','13:00','LMXJV','12');
+INSERT INTO SECCION VALUES(default,'IS-240','05','6:00','LMXJV','13');
+INSERT INTO SECCION VALUES(default,'IS-145','02','9:00','LMXJV','05');
+INSERT INTO SECCION VALUES(default,'IS-146','11','14:00','LMXJV','7');
+INSERT INTO SECCION VALUES(default,'IS-241','05','6:00','LMXJV','13');
+INSERT INTO SECCION VALUES(default,'IS-611','10','7:00','LMXJV','10');
+INSERT INTO SECCION VALUES(default,'IS-200','09','8:00','LMXJV','10');
+
+##IMPARTE
+
+INSERT INTO IMPARTE VALUES('5850087917325','791');
+INSERT INTO IMPARTE VALUES('8973217911080','792');
+INSERT INTO IMPARTE VALUES('9573456917081','793');
+INSERT INTO IMPARTE VALUES('5850087917325','794');
+INSERT INTO IMPARTE VALUES('7643217911080','795');
+INSERT INTO IMPARTE VALUES('7643217911080','796');
+INSERT INTO IMPARTE VALUES('7643217911080','797');
+INSERT INTO IMPARTE VALUES('9573456917081','798');
+
+##SE-IMPARTEN
+
+INSERT INTO SE_IMPARTEN VALUES('13','791');
+INSERT INTO SE_IMPARTEN VALUES('14','792');
+INSERT INTO SE_IMPARTEN VALUES('3','793');
+INSERT INTO SE_IMPARTEN VALUES('4','794');
+INSERT INTO SE_IMPARTEN VALUES('2','795');
+INSERT INTO SE_IMPARTEN VALUES('6','796');
+INSERT INTO SE_IMPARTEN VALUES('7','797');
+INSERT INTO SE_IMPARTEN VALUES('5','798');
+
+
+
