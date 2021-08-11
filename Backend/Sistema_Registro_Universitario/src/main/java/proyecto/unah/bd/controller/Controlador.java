@@ -161,17 +161,17 @@ public class Controlador {
 	//--------------------------Docente-----------------------
 	@GetMapping("/docente/RegistrarDocente")
 	public String docenteRegistro() {
-		return "";
+		return "docenteRegistro";
 	}
 	
 	@GetMapping("/docente/LoginDocente")
 	public String loginDocente () {
-		return "";
+		return "docenteLogin";
 	}
 	
 	@GetMapping("/docente/informacionDocente")
 	public String infoDocente () {
-		return "";
+		return "PaginaDocente";
 	}
 	
 	
@@ -184,7 +184,7 @@ public class Controlador {
 	
 	@GetMapping("/adminInfo")
 	public String adminInfo() {
-		return "";
+		return "Admin";
 	}
 	
 	//====================================================================
