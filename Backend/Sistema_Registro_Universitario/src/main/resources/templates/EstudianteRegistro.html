@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang = "en" xmlns:th="http://www.thymeleaf.org">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Registro de Nuevo Estudiante</title>
+        
+        <!-- Favicon-->
+        
+        <link href="static/assets/logo.svg" th:href="@{/assets/logo.svg}" type="image/x-icon" rel="icon"/>
+        
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" type="text/css" />
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <!-- Nuestro css-->
+		<link href="static/css/style.css" th:href="@{/css/styles.css}" rel="stylesheet" />
+		
+        <script>
+            function soloNumeros(e) { //ESTA ES UNA FUNCION PARA QUE SOLO PERMITA NUMEROS EN EL # DE IDENTIDAD
+                key=e.keyCode || e.which ; 
+                teclado=String.fromCharCode(key)  ;
+                numero= "0123456789"
+                especiales="8-37-48-46" ;
+                tecla_especial = false ; 
+
+                for(var i in especiales) {
+                    if(key==especiales[i]) {
+                        tecla_especial = true ;
+
+                    }
+
+                }
+                if(numero.indexOf(teclado)==-1 && !tecla_especial) {
+                    return false ; 
+                }
+
+
+            }
+        </script>
+    </head>
+    <body>
+        <!-- Navigation-->
+        <nav class="navbar navbar-light bg-light static-top">
+            <div class="container">
+                <a class="navbar-brand" href="#!">Registro de Nuevo Estudiante</a>
+                <div>
+                    <a class="btn btn-success" href="http://localhost:8080/estudiante/LoginEstudiante"><i class="bi bi-person-fill">Login</i></a> <!--dirige al login-->
+                    <a class="btn btn-success" href="http://localhost:8080/"><i class="bi bi-arrow-counterclockwise"> Regresar </i></a> <!--regresa a la pagina principal-->
+                </div>
+   
+            </div>
+        </nav>
+        <!-- Masthead-->
+        <header class="masthead">
+            <div class="container position-relative">
+                <div class="row justify-content-center">
+                    <div class="col-xl-6">
+                        <div class="text-center text-white">
+                            <h1 class="mb-4">Ingresa tus datos para ser un estudiante Universidad Halcones!</h1> <!--Tal vez cambiar-->
+                            <form th:action="@{/estudiante/crearEstudiante}" method="post" class="form-subscribe" id="contactForm" data-sb-form-api-token="API_TOKEN">
+
+                                <div class="row"> 
+                                    
+                                    <div class="col">
+                                        <label for="dni">Numero de Identidad</label>
+                                        <input type="text" class="form-control form-control-lg" id="dni" name="dni" placeholder="0801200105603"/>
+                                        
+                                        <div class="invalid-feedback text-white" data-sb-feedback="emailAddress:required">Email Address is required.</div>
+                                        <div class="invalid-feedback text-white">El numero de ID ingresado no es valido</div>
+                                    </div>
+                                
+                                </div>
+                                
+                                <div class="row"> <!-- que es class = row ? o col?-->
+
+                                    <div class="col">
+                                        <label for="nombre">Ingrese su nombre completo</label>
+                                        <input type="text" class="form-control form-control-lg" id="nombre" name="nombre" placeholder="Esthefani Alvarez Ordoñez" />
+                                        <div class="invalid-feedback text-white">Email Address is required.</div>
+                                        <div class="invalid-feedback text-white">Email Address Email is not valid.</div>
+                                    
+                                    </div>
+                                
+                                </div>
+                                
+                                <div class="row"> 
+                                    
+                                    <div class="col">
+                                        <label for="fechanacimiento">Ingrese su fecha de nacimiento</label>
+                                        <input type="date" class="form-control form-control-lg" id="fechanacimiento" name="fechanacimiento" value="2003-01-01" min="1950-01-01" max="2007-12-31"/>    
+                                        <div class="invalid-feedback text-white">Email Address is required.</div>
+                                        <div class="invalid-feedback text-white">Email Address Email is not valid.</div>
+                                        
+                                    </div>
+                                    
+                                
+                                </div>
+                                
+                                <div class="col">
+
+                                    <div class="col">
+                                        <label for="telefono">Numero de Telefono</label>
+                                        <input type="text" class="form-control form-control-lg" id="telefono" name="telefono" placeholder="99909990"/>
+                                        <div class="invalid-feedback text-white">Email Address is required.</div>
+                                        <div class="invalid-feedback text-white">Email Address Email is not valid.</div>
+                                        
+                                    </div>
+
+								</div>
+								
+                                    <div class="row"> 
+                                    
+                        
+                                        <div class="col">
+                                            <label for="correoElectronico">Correo Electronico</label>
+                                            <input type="text" class="form-control form-control-lg" id="correoElectronico" name="correoElectronico" placeholder="example@gmail.com" />
+                                            <div class="invalid-feedback text-white">Email Address is required.</div>
+                                            <div class="invalid-feedback text-white">Email Address Email is not valid.</div>
+                                            
+                                        </div>
+
+                                    </div>
+                                    
+
+                                    
+                                    <div class="row"> 
+                                    
+                        
+                                        <div class="col">
+                                            <label for="contrasenia">Contraseña</label>
+                                            <input type= "password" class="form-control form-control-lg" id="contrasenia" name="contrasenia" placeholder="Contraseña" />
+                                            <div class="invalid-feedback text-white">Email Address is required.</div>
+                                            <div class="invalid-feedback text-white">Email Address Email is not valid.</div>
+                                            
+                                        </div> 
+                                    
+                                    </div>
+
+
+
+									<div class="row"> 
+                                    
+                        
+                                        <div class="col">
+                                            <label for="sexo">Sexo</label>
+                                            <select  id="sexo" name = "sexo">
+                                            <option value="M" id="sexo" name="sexo">Masculino</option>
+                                            <option value="F" id="sexo" name="sexo">Femenino</option>
+                                         
+                                        </select>
+    
+                                            
+                                        </div>
+                                        
+                                            
+                                        <div class="col">
+                                            <label for="carrera">Carrera</label>
+                                            <select id="carrera" name = "carrera">
+                                            <option value="1" id="carrera" name = "carrera">Ingenieria Mecanica</option>
+                                            <option value="2" id="carrera" name = "carrera">Ingenieria en Sistemas</option>
+                                         
+                                        </select>
+    
+                                            
+                                        </div>
+                                    
+                                    </div>
+
+
+
+                                    <br><br>
+                                    
+                                    
+                                    <div class="row">
+                                     
+                                        <div class="col">
+                                            
+                                            <label for="ciudadOrigen">Departamento</label>
+                                            <select name="ciudadOrigen" id="ciudadOrigen">
+                                                <option value="Francisco Morazan" id="ciudadOrigen" name="ciudadOrigen"> Francisco Morazan</option>
+                                                <option value="Comayagua" id="ciudadOrigen" name="ciudadOrigen">Comayagua</option>
+                                                <option value="Gracias a Dios" id="ciudadOrigen" name="ciudadOrigen">Gracias a Dios</option>
+                                                <option value="Lempira" id="ciudadOrigen" name="ciudadOrigen">Lempira</option>
+                                                <option value="Ocotepeque" id="ciudadOrigen" name="ciudadOrigen">Ocotepeque</option>
+                                                <option value="Atlántida" id="ciudadOrigen" name="ciudadOrigen">Atlántida</option>
+                                                <option value="Choluteca" id="ciudadOrigen" name="ciudadOrigen">Choluteca</option>
+                                                <option value="Colón" id="ciudadOrigen" name="ciudadOrigen">Colón</option>
+                                                <option value="Copán" id="ciudadOrigen" name="ciudadOrigen">Copán</option>
+                                                <option value="Cortés" id="ciudadOrigen" name="ciudadOrigen">Cortés</option>
+                                                <option value="El Paraiso" id="ciudadOrigen" name="ciudadOrigen">El Paraiso</option>
+                                                <option value="Gracias a Dios" id="ciudadOrigen" name="ciudadOrigen">Gracias a Dios</option>
+                                                <option value="Intibucá" id="ciudadOrigen" name="ciudadOrigen">Intibucá</option>
+                                                <option value="Islas de la Bahía" id="ciudadOrigen" name="ciudadOrigen">Islas de la Bahía</option>
+                                                <option value="La Paz" id="ciudadOrigen" name="ciudadOrigen">La Paz</option>
+                                                <option value="Olancho" id="ciudadOrigen" name="ciudadOrigen">Olancho</option>
+                                                <option value="Santa Bárbara" id="ciudadOrigen" name="ciudadOrigen">Santa Bárbara</option>
+                                                <option value="Valle" id="ciudadOrigen" name="ciudadOrigen">Valle</option>
+                                                
+                                            </select>
+                                        </div>
+                                    </div>
+                                    
+
+                                <div class="d-none" id="submitSuccessMessage">
+                                    <div class="text-center mb-3">
+                                        <div class="fw-bolder">Form submission successful!</div>
+                                        <p>To activate this form, sign up at</p>
+                                        <a class="text-white" href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+                                    </div>
+                                </div>
+
+
+                          		<!--  <div class="col-auto"><button class="btn btn-primary btn-lg disabled" id="submitButton" type="submit">Submit</button></div> -->
+                          		 <div id="Boton">
+                                    <br><br>
+                                    
+                                     <button type= "summit" th:href="@{http://localhost:8080/estudiante/LoginEstudiante}" class="btn btn-primary">Enviar</button>
+									<a class >Login</a>
+                                </div>
+                     		
+                          		
+                            </form>
+
+
+             
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <!-- * *                               SB Forms JS                               * *-->
+        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    </body>
+</html>
