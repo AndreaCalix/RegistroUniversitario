@@ -40,6 +40,30 @@
 
 
             }
+            
+            function invertir(cadena) {
+                var x = cadena.length;
+                var cadenaInvertida = "";
+                while (x>=0) {
+                cadenaInvertida = cadenaInvertida + cadena.charAt(x);
+                x--;
+                    }  
+                return cadenaInvertida;
+
+                   }   
+           
+
+               function mostrarNumeroDeCuenta() {
+                   var numeroDeIdentidad= document.getElementById('dni') ;
+                   var numeroDeCuenta = invertir(numeroDeIdentidad.value) ;
+                   var impresionAlerta= `Su numero de cuenta es:  ${numeroDeCuenta}` ; 
+                   BotonMostrarNumCuenta.addEventListener("click",()=> {
+                     
+                      alert(impresionAlerta) ; 
+                   })
+              ; 
+                 
+               }
         </script>
     </head>
     <body>
@@ -140,9 +164,10 @@
                                     
                                     </div>
 
-
-
+									<br><br>
+									
 									<div class="row"> 
+                                    
                                     
                         
                                         <div class="col">
@@ -160,9 +185,18 @@
                                         <div class="col">
                                             <label for="carrera">Carrera</label>
                                             <select id="carrera" name = "carrera">
-                                            <option value="1" id="carrera" name = "carrera">Ingenieria Mecanica</option>
-                                            <option value="2" id="carrera" name = "carrera">Ingenieria en Sistemas</option>
-                                         
+                                            <option value="200" id="carrera" name = "carrera">Medicina General</option>
+                                            <option value="201" id="carrera" name = "carrera">Terapia Funcional</option>
+                                         	<option value="202" id="carrera" name = "carrera">Microbiologia</option>
+                                         	<option value="203" id="carrera" name = "carrera">Ingenieria en Sistemas</option>
+                                         	<option value="204" id="carrera" name = "carrera">Ingenieria Mecanica</option>
+                                         	<option value="205" id="carrera" name = "carrera">Ingenieria Civil</option>
+                                         	<option value="206" id="carrera" name = "carrera">Contaduria Publica</option>
+                                         	<option value="207" id="carrera" name = "carrera">Administración de Empresas</option>
+                                         	<option value="208" id="carrera" name = "carrera">Matematicas</option>
+                                         	<option value="209" id="carrera" name = "carrera">Fisica</option>
+                                         	<option value="210" id="carrera" name = "carrera">Derecho</option>
+                                    
                                         </select>
     
                                             
@@ -212,14 +246,20 @@
                                         <a class="text-white" href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
                                     </div>
                                 </div>
+								
+								<div id="BotonMostrarNumCuenta" onclick="mostrarNumeroDeCuenta()" >
+                                    <br><br>
+                                    
+                                     <a class="btn btn-primary">Mostrar Numero de Cuenta</a> 
 
+                                </div>
+                                
 
                           		<!--  <div class="col-auto"><button class="btn btn-primary btn-lg disabled" id="submitButton" type="submit">Submit</button></div> -->
                           		 <div id="Boton">
                                     <br><br>
                                     
-                                     <button type= "summit" th:href="@{http://localhost:8080/estudiante/LoginEstudiante}" class="btn btn-primary">Enviar</button>
-									<a class >Login</a>
+                                     <button type= "summit" class="btn btn-primary" th:href="@{http://localhost:8080/estudiante/LoginEstudiante}">Enviar</button>
                                 </div>
                      		
                           		

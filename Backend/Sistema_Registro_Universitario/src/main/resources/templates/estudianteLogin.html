@@ -40,7 +40,10 @@
                             function go(){
                             /* AQUI DEBERIA VALIDARSE LA CONTRASENIA Y CUENTA 
                             en lugar de admin seria la cuenta y en lugar de 1234 la contrasenia*/
-                            if (document.form.password.value=='1234' && document.form.login.value=='admin'){ 
+                            if (document.form.password.value=='232425' && document.form.login.value=='9573199911080' 
+                            	|| document.form.password.value=='samantha123' && document.form.login.value=='1666000021080'
+                            		|| document.form.password.value=='suarez15' && document.form.login.value=='1874489913080'
+                            			|| document.form.password.value=='collegue123' && document.form.login.value=='1001098910560'){ 
                                     document.form.submit(); 
                                 } 
                                 else{ 
@@ -49,15 +52,15 @@
                             } 
                             </SCRIPT> 
                         <h1 class="mb-5">Ingrese sus Datos</h1>
-                        <form  class="form-subscribe" id="contactForm" data-sb-form-api-token="API_TOKEN" name=form action="../../Estudiante/estudiantes-matricula.html">
+                        <form  class="form-subscribe" id="contactForm" data-sb-form-api-token="API_TOKEN" name="form" th:action="@{http://localhost:8080/estudiante/infoEstudianteMatricula}">
                             <div class="row">
                                 <div class="col">
-                                    <input class="form-control form-control-lg"  placeholder="Numero de Cuenta" type=text name=login> 
+                                    <input type=text class="form-control form-control-lg"  placeholder="Numero de Cuenta" id="numCuentaEstu" name="numCuentaEstu"> 
                                     <br>
-                                    <input class="form-control form-control-lg" placeholder="Contraseña" type=password name=password> 
+                                    <input type=password class="form-control form-control-lg" placeholder="Contraseña" id="contrasenia" name="contrasenia"> 
                                     <br>
                                     <div class="col-auto">
-                                        <input class="btn btn-primary" onclick=go() id="submitButton" type=button value=Ingresar>
+                                        <button type="summit"  class="btn btn-primary" id="submitButton">Ingresar</button>
                                     </div>
                                 </div>
                             </div>   

@@ -10,7 +10,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.DateTimeFormat.ISO;
-import org.springframework.security.crypto.password.PasswordEncoder;
+//import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -118,10 +118,10 @@ public class Controlador {
 	//====================================================================
 	// Seguridad
 	//====================================================================
-	
+	/*
 	@Autowired
 	PasswordEncoder passwordEncoder;
-	
+	*/
 	
 	
 	

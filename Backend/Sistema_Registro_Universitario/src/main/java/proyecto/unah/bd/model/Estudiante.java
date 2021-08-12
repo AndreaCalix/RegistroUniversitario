@@ -32,7 +32,7 @@ public class Estudiante {
 	
 	
 	//Relacion con Matricula
-	@OneToMany(mappedBy = "estudiante", fetch = FetchType.EAGER)
+	@OneToMany(mappedBy = "estudiante", fetch = FetchType.LAZY)
 	public List<Matricula> matricula;
 	
 	

@@ -6,6 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class SistemaRegistroUniversitarioApplication {
 
+	public static Object entity;
+
 	public static void main(String[] args) {
 		SpringApplication.run(SistemaRegistroUniversitarioApplication.class, args);
 	}
