@@ -10,6 +10,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.DateTimeFormat.ISO;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -113,6 +114,15 @@ public class Controlador {
 	
 	@Autowired
 	ServiceSeccionLab serviceseccionlab;
+	
+	//====================================================================
+	// Seguridad
+	//====================================================================
+	
+	@Autowired
+	PasswordEncoder passwordEncoder;
+	
+	
 	
 	
 	//-------------------------------Paginas Iniciales-------------------------------
@@ -283,11 +293,11 @@ public class Controlador {
 		//===================================================================
 				
 				
-				@RequestMapping (value = "/estudiante/crearEstudiante", method = RequestMethod.GET)
-				public Estudiante crearEstudiante(@RequestParam(name = "dni") String dni,
+				@RequestMapping (value = "/estudiante/crearEstudiante", method = RequestMethod.POST)
+				public String crearEstudiante(@RequestParam(name = "dni") String dni,
 												  @RequestParam(name = "nombre") String nombreEstudiante,
 												  @RequestParam(name = "fechanacimiento") @DateTimeFormat(iso = ISO.DATE) LocalDate fechaNac,
-												  @RequestParam (name = "sexo") char sexo,
+												  @RequestParam (name = "sexo") String sexo,
 												  @RequestParam (name = "telefono") String telefono,
 												  @RequestParam (name = "ciudadOrigen") String ciudadOrigen,
 												  @RequestParam (name = "correoElectronico") String correoElectronico,
@@ -301,13 +311,13 @@ public class Controlador {
 						
 						//Buscar la carrera
 						Carrera carreraE = this.servicecarrera.buscarCarrera(idCarrera);
-						
-						Estudiante estudiante1 = new Estudiante(numCuentaEstu, dni, nombreEstudiante, fechaNac, sexo, telefono, ciudadOrigen, correoElectronico, contrasenia, carreraE);
+						char sexoA = sexo.charAt(0);
+						Estudiante estudiante1 = new Estudiante(numCuentaEstu, dni, nombreEstudiante, fechaNac, sexoA, telefono, ciudadOrigen, correoElectronico, contrasenia, carreraE);              
 						
 						this.serviceestudiante.crearEstudiante(estudiante1);
 						
 						//return "RegistroEstudiante";
-						return estudiante1;
+						return "EstudianteRegistro";
 					}
 					
 					@RequestMapping (value = "/estudiante/listaEstudiante", method = RequestMethod.GET)

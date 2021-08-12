@@ -16,14 +16,18 @@
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <!-- Navbar Brand-->
-            <a class="navbar-brand ps-3" href="#"><img src="assets/img/Universidad Halcones-05.png"  alt="texto"  style="max-width:30%;width:auto;height:auto;"/></a>
+            <a class="navbar-brand ps-3" href="#"><img src="assets/img/Universidad_Halcones.png"  alt="texto"  style="max-width:30%;width:auto;height:auto;"/></a>
            
             <!-- Navbar-->
             <ul class="navbar-nav ms-auto ">
                 <li class="nav-item dropdown">
                     <a class="nav-link active dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw fa-2x"></i></a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="../Logins/Login_Estudiante/estudianteLogin.html">Salir</a></li>
+                        <li>
+                        	<form class="form-inline my-2 my-lg-0">
+                        		<a class="dropdown-item" th:href="@{/logout}">Salir</a>
+                        	</form>
+                        </li>
                     </ul>
                 </li>
             </ul>
