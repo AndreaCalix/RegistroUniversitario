@@ -184,7 +184,7 @@ public class Controlador {
 	
 	@GetMapping("/adminInfo")
 	public String adminInfo() {
-		return "Admin";
+		return "Administrador";
 	}
 	
 	//====================================================================
