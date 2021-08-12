@@ -1,4 +1,4 @@
-/*
+
 package proyecto.unah.bd.security;
 
 import javax.activation.DataSource;
@@ -53,4 +53,3 @@ public class DataWebSecurity extends WebSecurityConfigurerAdapter{
 	}
 		
 }
-*/	
