@@ -8,5 +8,5 @@ import proyecto.unah.bd.model.Docente;
 
 public interface RepositoryDocente extends JpaRepository<Docente,String>{
 	
-	public Optional<Docente> findById(String id);
+	public Optional<Docente> findById(String Id);
 }

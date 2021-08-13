@@ -23,7 +23,7 @@ public class Docente {
 	public String  dni;
 	public String nombreDocente;
 	public LocalDate fechaNac;
-	public String sexo; //puede tirar error porque en la base, este atributo es de tipo char
+	public char sexo; //puede tirar error porque en la base, este atributo es de tipo char
 	private String telefono;
 	private String ciudadOrigen;
 	public String correoElectronico;
@@ -39,7 +39,7 @@ public class Docente {
 	public Docente() {}
 
 	//Constructor 
-	public Docente(String numCuentaDocente, String dni, String nombreDocente, LocalDate fechaNac, String sexo,
+	public Docente(String numCuentaDocente, String dni, String nombreDocente, LocalDate fechaNac, char sexo,
 			String telefono, String ciudadOrigen, String correoelectronico, String contrasenia, Departamento departamento) {
 		super();
 		this.numCuentaDocente = numCuentaDocente;
@@ -89,11 +89,11 @@ public class Docente {
 		this.fechaNac = fechaNac;
 	}
 
-	public String getSexo() {
+	public char getSexo() {
 		return sexo;
 	}
 
-	public void setSexo(String sexo) {
+	public void setSexo(char sexo) {
 		this.sexo = sexo;
 	}
 

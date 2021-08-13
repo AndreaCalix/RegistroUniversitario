@@ -515,27 +515,30 @@ public class Controlador {
 		// Docente
 		//====================================================================
 	
-		@RequestMapping(value = "/docente/crearDocente", method = RequestMethod.GET)
-		public Docente crearDocente(@RequestParam(name = "Identificacion") String dni,
-				 					@RequestParam(name = "Nombre ") String nombre,
-				 					@RequestParam(name = "Fecha de Nacimiento") @DateTimeFormat(iso = ISO.DATE) LocalDate fechaNacD,
-				 					@RequestParam(name = "Sexo") String sexo,//cambiar a char
-				 					@RequestParam(name = "Telefono") String telefono,
-				 					@RequestParam(name = "Ciudad de Origen") String ciudadOrigen,
-				 					@RequestParam(name = "CorreoElectronico") String Correo_Electronico,
-				                    @RequestParam(name = "Contraseña") String contrasenia,
-				                    @RequestParam(name = "Departamento") int departamento) {
-		//Buscar Departamento
-		Departamento departamento3 = this.servicedepartamento.buscarDepartamento(departamento);
-		
+		@RequestMapping(value = "/docente/crearDocente", method = RequestMethod.POST)
+		public String crearDocente(@RequestParam(name = "dniD") String dni,
+				 					@RequestParam(name = "nombreD") String nombreDocente,
+				 					@RequestParam(name = "fechanacimientoD") @DateTimeFormat(iso = ISO.DATE) LocalDate fechaNac,
+				 					@RequestParam(name = "sexoD") String sexo,//cambiar a char
+				 					@RequestParam(name = "telefonoD") String telefono,
+				 					@RequestParam(name = "ciudadOrigenD") String ciudadOrigen,
+				 					@RequestParam(name = "correoElectronicoD") String correoelectronico,
+				                    @RequestParam(name = "contraseniaD") String contrasenia,
+				                    @RequestParam(name = "departamentoD") int idDepartamento) { 
+			
 		//Numero de cuenta Docente
-		String numCuentaD = "";
+		String numCuentaDocente = "";
 		for (int i = dni.length()-1; i >= 0; i--)
-			  numCuentaD = numCuentaD + dni.charAt(i);
+			  numCuentaDocente = numCuentaDocente + dni.charAt(i);
 		
-		Docente docente = new Docente (numCuentaD, dni ,nombre, fechaNacD, sexo,telefono, ciudadOrigen, Correo_Electronico,contrasenia,departamento3);
-		this.servicedocente.crearDocente(docente);
-		return docente;
+		//Buscar Departamento
+		Departamento departamentoD = this.servicedepartamento.buscarDepartamento(idDepartamento);        
+		
+		char sexoD = sexo.charAt(0);
+		
+		Docente docente1 = new Docente (numCuentaDocente, dni ,nombreDocente, fechaNac, sexoD, telefono, ciudadOrigen, correoelectronico,contrasenia,departamentoD);
+		this.servicedocente.crearDocente(docente1);
+		return "docenteRegistro";
 		
 		}
 		

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang = "en" xmlns:th="http://www.thymeleaf.org">
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -13,7 +13,8 @@
         <!-- Google fonts-->
         <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="static/css/DocenteRegistroCSS.css" th:href="@{/css/DocenteRegistroCSS.css}" rel="stylesheet" />
+        <!-- <link href="static/css/DocenteRegistroCSS.css" th:href="@{/css/DocenteRegistroCSS.css}" rel="stylesheet" /> -->
+        <link href="static/css/style.css" th:href="@{/css/styles.css}" rel="stylesheet" />
 
         <script>
             function soloNumeros(e) { //ESTA ES UNA FUNCION PARA QUE SOLO PERMITA NUMEROS EN EL # DE IDENTIDAD
@@ -36,6 +37,30 @@
 
 
             }
+            
+            function invertir(cadena) {
+                var x = cadena.length;
+                var cadenaInvertida = "";
+                while (x>=0) {
+                cadenaInvertida = cadenaInvertida + cadena.charAt(x);
+                x--;
+                    }  
+                return cadenaInvertida;
+
+                   }   
+           
+
+               function mostrarNumeroDeCuenta() {
+                   var numeroDeIdentidad= document.getElementById('dni') ;
+                   var numeroDeCuenta = invertir(numeroDeIdentidad.value) ;
+                   var impresionAlerta= `Su numero de cuenta es:  ${numeroDeCuenta}` ; 
+                   BotonMostrarNumCuenta.addEventListener("click",()=> {
+                     
+                      alert(impresionAlerta) ; 
+                   })
+              ; 
+                 
+               }
         </script>
     </head>
     <body>
@@ -44,10 +69,10 @@
             <div class="container">
                 <a class="navbar-brand" href="#!">Registro de Nuevo Docente</a>
                 <div>
-                    <a class="btn btn-primary" href="http://localhost:8080/docente/LoginDocente"><i class="bi bi-person-fill">Login</i></a> <!--dirige al login-->
-                    <a class="btn btn-primary" href="http://localhost:8080/"><i class="bi bi-arrow-counterclockwise"> Regresar </i></a> <!--regresa a la pagina principal-->
+                    <a class="btn btn-success" href="http://localhost:8080/docente/LoginDocente"><i class="bi bi-person-fill">Login</i></a> <!--dirige al login-->
+                    <a class="btn btn-success" href="http://localhost:8080/"><i class="bi bi-arrow-counterclockwise"> Regresar </i></a> <!--regresa a la pagina principal-->
                 </div>
-               
+   
             </div>
         </nav>
         <!-- Masthead-->
@@ -57,59 +82,68 @@
                     <div class="col-xl-6">
                         <div class="text-center text-white">
                             <h1 class="mb-4">Ingresa tus datos para ser un Docente para Universidad Halcones!</h1> <!--Tal vez cambiar-->
-                            <form class="form-subscribe" id="contactForm" data-sb-form-api-token="API_TOKEN">
+                            <form th:action="@{/docente/crearDocente}" method="post" class="form-subscribe" id="contactForm" data-sb-form-api-token="API_TOKEN">
 
                                 <div class="row"> 
-                            
+                                    
                                     <div class="col">
-                                        <label for="nombreEstudiante">Ingrese su nombre completo</label>
-                                        <input class="form-control form-control-lg" id="nombreEstudiante" placeholder="Esthefani Alvarez Ordoñez" />
+                                        <label for="dniD">Numero de Identidad</label>
+                                        <input type="text" class="form-control form-control-lg" id="dniD" name="dniD" placeholder="0801200105603"/>
+                                        
+                                        <div class="invalid-feedback text-white" data-sb-feedback="emailAddress:required">Email Address is required.</div>
+                                        <div class="invalid-feedback text-white">El numero de ID ingresado no es valido</div>
+                                    </div>
+                                
+                                </div>
+                                
+                                <div class="row"> <!-- que es class = row ? o col?-->
+
+                                    <div class="col">
+                                        <label for="nombre">Ingrese su nombre completo</label>
+                                        <input type="text" class="form-control form-control-lg" id="nombreD" name="nombreD" placeholder="Esthefani Alvarez Ordoñez" />
+                                        <div class="invalid-feedback text-white">Email Address is required.</div>
+                                        <div class="invalid-feedback text-white">Email Address Email is not valid.</div>
+                                    
+                                    </div>
+                                
+                                </div>
+                                
+                                <div class="row"> 
+                                    
+                                    <div class="col">
+                                        <label for="fechanacimientoD">Ingrese su fecha de nacimiento</label>
+                                        <input type="date" class="form-control form-control-lg" id="fechanacimientoD" name="fechanacimientoD" value="2003-01-01" min="1950-01-01" max="2007-12-31"/>    
                                         <div class="invalid-feedback text-white">Email Address is required.</div>
                                         <div class="invalid-feedback text-white">Email Address Email is not valid.</div>
                                         
                                     </div>
+                                    
                                 
                                 </div>
                                 
                                 <div class="col">
 
                                     <div class="col">
-                                        <label for="numeroIdentidad">Numero de Identidad</label>
-                                        <input class="form-control form-control-lg" id="numeroIdentidad" placeholder="0801200105603" onkeypress="return soloNumeros(event)" />
-                                        <div class="invalid-feedback text-white">Email Address is required.</div>
-                                        <div class="invalid-feedback text-white">Email Address Email is not valid.</div>
-                                    </div>
-
-                                    <div class="col">
-                                        <label for="numeroTelefono">Numero de Telefono</label>
-                                        <input class="form-control form-control-lg" id="numeroTelefono" placeholder="99909990" onkeypress=" return soloNumeros(event)" />
+                                        <label for="telefonoD">Numero de Telefono</label>
+                                        <input type="text" class="form-control form-control-lg" id="telefonoD" name="telefonoD" placeholder="99909990"/>
                                         <div class="invalid-feedback text-white">Email Address is required.</div>
                                         <div class="invalid-feedback text-white">Email Address Email is not valid.</div>
                                         
                                     </div>
 
-
+								</div>
+								
                                     <div class="row"> 
                                     
                         
                                         <div class="col">
-                                            <label for="correoElectronico">Correo Electronico</label>
-                                            <input class="form-control form-control-lg" id="correoElectronico" placeholder="alexgalo246@gmail.com" />
+                                            <label for="correoElectronicoD">Correo Electronico</label>
+                                            <input type="text" class="form-control form-control-lg" id="correoElectronicoD" name="correoElectronicoD" placeholder="example@gmail.com" />
                                             <div class="invalid-feedback text-white">Email Address is required.</div>
                                             <div class="invalid-feedback text-white">Email Address Email is not valid.</div>
                                             
                                         </div>
 
-                                  
-                                            
-                                        <div class="col">
-                                            <label for="correoElectronico">Confirme Correo Electronico</label>
-                                            <input class="form-control form-control-lg" id="correoElectronico" placeholder="alexgalo246@gmail.com" />
-                                            <div class="invalid-feedback text-white">Email Address is required.</div>
-                                            <div class="invalid-feedback text-white">Email Address Email is not valid.</div>
-                                            
-                                        </div>
-                                    
                                     </div>
                                     
 
@@ -118,33 +152,26 @@
                                     
                         
                                         <div class="col">
-                                            <label for="correoElectronico">Contraseña</label>
-                                            <input class="form-control form-control-lg" id="correoElectronico" type= "password"   placeholder="Contraseña" />
+                                            <label for="contraseniaD">Contraseña</label>
+                                            <input type= "password" class="form-control form-control-lg" id="contraseniaD" name="contraseniaD" placeholder="Contraseña" />
                                             <div class="invalid-feedback text-white">Email Address is required.</div>
                                             <div class="invalid-feedback text-white">Email Address Email is not valid.</div>
                                             
-                                        </div>
-                                        
-                                            
-                                        <div class="col">
-                                            <label for="contraseña">Confirme contraseña</label>
-                                            <input class="form-control form-control-lg" id="correoElectronico" placeholder="Contraseña" type="password" />
-                                            <div class="invalid-feedback text-white">Email Address is required.</div>
-                                            <div class="invalid-feedback text-white">Email Address Email is not valid.</div>
-                                            <br>
-                                        </div>
+                                        </div> 
                                     
                                     </div>
 
-
-                                    <div class="row"> 
+									<br><br>
+									
+									<div class="row"> 
+                                    
                                     
                         
                                         <div class="col">
-                                            <label for="sexo">Sexo</label>
-                                            <select  id="sexo" >
-                                            <option value="1">Masculino</option>
-                                            <option value="2">Femenino</option>
+                                            <label for="sexoD">Sexo</label>
+                                            <select  id="sexoD" name = "sexo">
+                                            <option value="M" id="sexoD" name="sexoD">Masculino</option>
+                                            <option value="F" id="sexoD" name="sexoD">Femenino</option>
                                          
                                         </select>
     
@@ -153,68 +180,61 @@
                                         
                                             
                                         <div class="col">
-                                            <label for="sexo">Carrera</label>
-                                            <select  id="sexo" >
-                                            <option value="1">Ingenieria Mecanica</option>
-                                            <option value="2">Ingenieria en Sistemas</option>
-                                         
+                                            <label for="departamentoD">Departamento</label>
+                                            <select id="departamentoD" name = "departamentoD">
+                                            <option value="500" id="departamentoD" name = "departamentoD">Departamento de Ingeniería en Sistemas</option>
+                                            <option value="501" id="departamentoD" name = "departamentoD">Departamento de Ing.Civil</option>
+                                         	<option value="502" id="departamentoD" name = "departamentoD">Departamento de Ing.Mecanica</option>
+                                         	<option value="503" id="departamentoD" name = "departamentoD">Departamento de Matematicas</option>
+                                         	<option value="504" id="departamentoD" name = "departamentoD">Departamento de Fisica</option>
+                                         	<option value="505" id="departamentoD" name = "departamentoD">Departamento de Contaduria Publica</option>
+                                         	<option value="506" id="departamentoD" name = "departamentoD">Departamento de Admin de Empresas</option>
+                                         	<option value="507" id="departamentoD" name = "departamentoD">Departamento de Medicina General</option>
+                                         	<option value="508" id="departamentoD" name = "departamentoD">Departamento de Terapia</option>
+                                         	<option value="509" id="departamentoD" name = "departamentoD">Departamento de Microbiologia</option>
+                                         	<option value="510" id="departamentoD" name = "departamentoD">Departamento de Derecho</option>
+                                    
                                         </select>
     
                                             
                                         </div>
                                     
                                     </div>
+
+
 
                                     <br><br>
-                                 
+                                    
+                                    
                                     <div class="row">
-
+                                     
                                         <div class="col">
                                             
-                                            <label for="nombreDepartamento">Departamento</label>
-                                            <select name="Departamento" id="selectorDepartamento">
-                                                <option value="1"> Francisco Morazan</option>
-                                                <option value="2">Comayagua</option>
-                                                <option value="3">Gracias a Dios</option>
-                                                <option value="4">Lempira</option>
-                                                <option value="5">Ocotepeque</option>
-                                                <option value="6">Atlántida</option>
-                                                <option value="7">Choluteca</option>
-                                                <option value="8">Colón</option>
-                                                <option value="9">Copán</option>
-                                                <option value="10">Cortés</option>
-                                                <option value="11">El Paraiso</option>
-                                                <option value="12">Gracias a Dios</option>
-                                                <option value="13">Intibucá</option>
-                                                <option value="14">Islas de la Bahía</option>
-                                                <option value="15">La Paz</option>
-                                                <option value="16">Olancho</option>
-                                                <option value="17">Santa Bárbara</option>
-                                                <option value="18">Valle</option>
+                                            <label for="ciudadOrigenD">Departamento</label>
+                                            <select name="ciudadOrigenD" id="ciudadOrigenD">
+                                                <option value="Francisco Morazan" id="ciudadOrigenD" name="ciudadOrigenD"> Francisco Morazan</option>
+                                                <option value="Comayagua" id="ciudadOrigenD" name="ciudadOrigenD">Comayagua</option>
+                                                <option value="Gracias a Dios" id="ciudadOrigenD" name="ciudadOrigenD">Gracias a Dios</option>
+                                                <option value="Lempira" id="ciudadOrigenD" name="ciudadOrigenD">Lempira</option>
+                                                <option value="Ocotepeque" id="ciudadOrigenD" name="ciudadOrigenD">Ocotepeque</option>
+                                                <option value="Atlántida" id="ciudadOrigenD" name="ciudadOrigenD">Atlántida</option>
+                                                <option value="Choluteca" id="ciudadOrigenD" name="ciudadOrigenD">Choluteca</option>
+                                                <option value="Colón" id="ciudadOrigenD" name="ciudadOrigenD">Colón</option>
+                                                <option value="Copán" id="ciudadOrigenD" name="ciudadOrigenD">Copán</option>
+                                                <option value="Cortés" id="ciudadOrigenD" name="ciudadOrigenD">Cortés</option>
+                                                <option value="El Paraiso" id="ciudadOrigenD" name="ciudadOrigenD">El Paraiso</option>
+                                                <option value="Gracias a Dios" id="ciudadOrigenD" name="ciudadOrigenD">Gracias a Dios</option>
+                                                <option value="Intibucá" id="ciudadOrigenD" name="ciudadOrigenD">Intibucá</option>
+                                                <option value="Islas de la Bahía" id="ciudadOrigenD" name="ciudadOrigenD">Islas de la Bahía</option>
+                                                <option value="La Paz" id="ciudadOrigenD" name="ciudadOrigenD">La Paz</option>
+                                                <option value="Olancho" id="ciudadOrigenD" name="ciudadOrigenD">Olancho</option>
+                                                <option value="Santa Bárbara" id="ciudadOrigenD" name="ciudadOrigenD">Santa Bárbara</option>
+                                                <option value="Valle" id="ciudadOrigenD" name="ciudadOrigenD">Valle</option>
                                                 
-                                               
-                                                
-
-
-                                                
-
                                             </select>
                                         </div>
-                                        
-                                <div id="Boton">
-                                    <br><br>
-                                     <a class="btn btn-primary" href="#signup">Enviar</a> <!--No estoy seguro si deberia ir Volver-->
-
-                                </div>
-
-
-         
-
-
-
-
-                              
-                               
+                                    </div>
+                                    
 
                                 <div class="d-none" id="submitSuccessMessage">
                                     <div class="text-center mb-3">
@@ -223,9 +243,24 @@
                                         <a class="text-white" href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
                                     </div>
                                 </div>
+								
+								<div id="BotonMostrarNumCuenta" onclick="mostrarNumeroDeCuenta()" >
+                                    <br><br>
+                                    
+                                     <a class="btn btn-primary">Mostrar Numero de Cuenta</a> 
 
+                                </div>
+                                
 
-                                <!--  <div class="col-auto"><button class="btn btn-primary btn-lg disabled" id="submitButton" type="submit">Submit</button></div> -->
+                          		<!--  <div class="col-auto"><button class="btn btn-primary btn-lg disabled" id="submitButton" type="submit">Submit</button></div> -->
+                          		 <div id="Boton">
+                                    <br><br>
+                                    
+                                     <button type= "summit" class="btn btn-primary" th:href="@{http://localhost:8080/docente/LoginDocente}">Enviar</button>
+                                </div>
+                     		
+                          		
+                            </form>
 
 
 
