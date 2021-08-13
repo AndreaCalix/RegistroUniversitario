@@ -20,7 +20,7 @@ public class Estudiante {
 	
 	//Atributos
 	@Id
-	public String numCuentaEstu;
+	private String numCuentaEstu;
 	public String dni;
 	public String nombreEstudiante;
 	public LocalDate fechaNac;
@@ -32,7 +32,7 @@ public class Estudiante {
 	
 	
 	//Relacion con Matricula
-	@OneToMany(mappedBy = "estudiante", fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "estudiante", fetch = FetchType.EAGER)
 	public List<Matricula> matricula;
 	
 	

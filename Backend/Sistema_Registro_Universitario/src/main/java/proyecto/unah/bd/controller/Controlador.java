@@ -12,7 +12,9 @@ import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.DateTimeFormat.ISO;
 //import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -292,6 +294,13 @@ public class Controlador {
 		// Estudiante
 		//===================================================================
 				
+				@GetMapping("estudiante/detelle/{id}")
+				public String detalleEstudiante(@PathVariable("0005010021080") String cuenta,
+																Model model) {
+					Optional<Estudiante> estudiante = this.serviceestudiante.buscarEstudiante(cuenta);
+					model.addAttribute("estudiante", estudiante);
+					return "matriculaEstudiante";
+				}
 				
 				@RequestMapping (value = "/estudiante/crearEstudiante", method = RequestMethod.POST)
 				public String crearEstudiante(@RequestParam(name = "dni") String dni,
@@ -543,8 +552,10 @@ public class Controlador {
 		}
 		
 		@RequestMapping(value = "/docente/listaDocente", method = RequestMethod.GET)
-		public List<Docente> listadoDocente() {
-			return this.servicedocente.obtenerTodosDocentes();
+		public String DocentelistadoDocente(Model model) {
+			List<Docente> docente1 = this.servicedocente.obtenerTodosDocentes();
+			model.addAttribute("docentes", docente1);
+			return "Admin";
 			}
 		
 		@RequestMapping(value ="/docente/buscarDocente",method=RequestMethod.GET)

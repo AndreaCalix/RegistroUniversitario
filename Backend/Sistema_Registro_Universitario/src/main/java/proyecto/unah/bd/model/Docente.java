@@ -23,8 +23,13 @@ public class Docente {
 	public String  dni;
 	public String nombreDocente;
 	public LocalDate fechaNac;
+<<<<<<< Updated upstream
 	public char sexo; //puede tirar error porque en la base, este atributo es de tipo char
 	private String telefono;
+=======
+	public String sexo; //puede tirar error porque en la base, este atributo es de tipo char
+	public String telefono;
+>>>>>>> Stashed changes
 	private String ciudadOrigen;
 	public String correoElectronico;
 	private String contrasenia;
